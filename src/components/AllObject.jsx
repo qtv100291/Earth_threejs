@@ -9,7 +9,7 @@ import * as THREE from 'three'
 const AllObject = () => {
     const groupMesh = useRef()
     const { camera, raycaster } = useThree()
-    const { camera: camera_1, raycaster_1 } = useThree()
+    const { camera: camera_1, raycaster: raycaster_1 } = useThree()
 
     const onMouseClick = event => {
         const mouse = {}
