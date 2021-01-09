@@ -6,7 +6,7 @@ module.exports = merge(common, {
     mode: 'development',
     devServer: {
         contentBase: './public',
-        watchContentBase: true,
+        // watchContentBase: true,
         port: 3500,
         open: 'chrome',
         hot: true,

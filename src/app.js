@@ -4,7 +4,6 @@ import AllObject from './components/AllObject.jsx';
 
 const App = () => {
     
-
     const Component = () => {
         return (
             <React.Fragment>
@@ -15,14 +14,14 @@ const App = () => {
     }
 
     // useFrame(()=> {
-
+                            
     // })
-
+        
     return ( 
         <Canvas 
             camera={ { position:[50, 30, 0] } }
         >
-            <Component />
+            <Component/>
             <AllObject/>
         </Canvas>
     );

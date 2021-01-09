@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
 import { useFrame } from 'react-three-fiber'
 import * as THREE from 'three'
-import './planet.css'
+import './Planet.css'
 
-const Planet = ({ surface, radius, position, orbit }) => {
+const Planet = ({ surface, radius, position, orbit, visible, name }) => {
     const imageSurface = new THREE.TextureLoader().load(surface)
     const mesh = useRef()
     let omega = 0
@@ -11,7 +11,7 @@ const Planet = ({ surface, radius, position, orbit }) => {
 
     useFrame(() => {
         if (orbit){
-            omega = omega > 2*Math.PI ? (omega - 2*Math.PI + 0.2*Math.PI/60) : (omega + 0.2*Math.PI/60)
+            omega = omega > 2*Math.PI ? (omega - 2*Math.PI + 0.1*Math.PI/60) : (omega + 0.1*Math.PI/60)
             mesh.current.position.x = position[0]*(Math.cos(omega))
             mesh.current.position.z = position[0]*(Math.sin(omega))
         }
@@ -21,6 +21,8 @@ const Planet = ({ surface, radius, position, orbit }) => {
         <mesh
             ref={mesh}
             position={position}
+            visible={visible}
+            name={name}
         >
             <meshStandardMaterial map={imageSurface} side={2}/>
             <sphereBufferGeometry  args={[radius, 60, 60]}/>

@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react'
 
-const Belt = ({ radius, rotation }) => {
+const Belt = ({ radius, rotation, visible, name }) => {
     const mesh = useRef()
     useEffect(()=> {
         mesh.current.rotation.x = rotation
@@ -10,6 +10,8 @@ const Belt = ({ radius, rotation }) => {
         <mesh
             ref={mesh}
             rotateZ={rotation}
+            visible={visible}
+            name={name}
         >
             <meshStandardMaterial side={2}/>
             <ringBufferGeometry  args={[radius - 0.15, radius + 0.15 , 60, 60]}/>

@@ -10,6 +10,8 @@
 # production
 /build
 /public
+
+# reference
 /reference
 
 # misc
